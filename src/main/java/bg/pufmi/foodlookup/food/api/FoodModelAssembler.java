@@ -1,6 +1,6 @@
 package bg.pufmi.foodlookup.food.api;
 
-import static bg.pufmi.foodlookup.common.publicid.PublicIdUtils.encode;
+import static bg.pufmi.foodlookup.utils.PublicIdUtils.encode;
 import static bg.pufmi.foodlookup.utils.SecurityUtils.isAuthenticated;
 import static lombok.AccessLevel.PRIVATE;
 import static org.springframework.hateoas.server.core.DummyInvocationUtils.methodOn;

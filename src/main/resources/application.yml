@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:mariadb://localhost/foodlookup
-    username: ${db_user}
-    password: ${db_password}
+    username: root
+    password: root
     driver-class-name: org.mariadb.jdbc.Driver
     
   jpa:
@@ -13,3 +13,5 @@ spring:
     baseline-on-migrate: true
     out-of-order: true
     baseline-version: 0
+    locations:
+      - classpath:/db/migration

@@ -1,4 +1,4 @@
-package bg.pufmi.foodlookup.common.publicid;
+package bg.pufmi.foodlookup.utils;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.util.Base64.Decoder;

@@ -1,6 +1,6 @@
 package bg.pufmi.foodlookup.food.api;
 
-import static bg.pufmi.foodlookup.common.publicid.PublicIdUtils.decode;
+import static bg.pufmi.foodlookup.utils.PublicIdUtils.decode;
 import static lombok.AccessLevel.PRIVATE;
 import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.NO_CONTENT;
