@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost/foodlookup
+    username: ${db_user}
+    password: ${db_password}
+    driver-class-name: org.mariadb.jdbc.Driver
+    
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      
+  flyway:
+    baseline-on-migrate: true
+    out-of-order: true
+    baseline-version: 0
