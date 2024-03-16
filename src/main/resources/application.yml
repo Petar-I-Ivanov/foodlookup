@@ -6,8 +6,9 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     
   jpa:
-    hibernate:
-      ddl-auto: validate
+    properties:
+      hibernate.ddl-auto: validate
+      hibernate.id.db_structure_naming_strategy: single
       
   flyway:
     baseline-on-migrate: true

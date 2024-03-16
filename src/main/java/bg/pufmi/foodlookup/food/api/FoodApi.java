@@ -5,6 +5,7 @@ import static lombok.AccessLevel.PRIVATE;
 import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.NO_CONTENT;
 import static org.springframework.http.HttpStatus.OK;
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 import bg.pufmi.foodlookup.food.model.FoodCreateEditRequest;
 import bg.pufmi.foodlookup.food.model.FoodSearchCriteria;
@@ -14,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,6 +30,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/foods")
 @RequiredArgsConstructor
 @FieldDefaults(level = PRIVATE, makeFinal = true)
+@CrossOrigin(
+    origins = "http://localhost:3000",
+    allowedHeaders = "*",
+    methods = {POST, GET, PUT, DELETE, OPTIONS})
 public class FoodApi {
 
   FoodService foodService;

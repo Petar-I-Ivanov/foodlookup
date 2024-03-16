@@ -18,7 +18,7 @@ import org.springframework.hateoas.server.core.Relation;
 @Getter
 @Setter
 @FieldDefaults(level = PRIVATE)
-@Relation("food")
+@Relation(collectionRelation = "foods")
 public class FoodModel extends RepresentationModel<FoodModel> {
 
   String id;

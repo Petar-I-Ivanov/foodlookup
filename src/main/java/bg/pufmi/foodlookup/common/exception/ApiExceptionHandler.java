@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-@RestControllerAdvice
+@RestControllerAdvice()
 public class ApiExceptionHandler {
 
   @ExceptionHandler(EntityNotFoundException.class)
-  @ResponseStatus(code = NOT_FOUND)
+  @ResponseStatus(NOT_FOUND)
   public ErrorResponse handleEntityNotFound(EntityNotFoundException ex) {
     return new ErrorResponse(ex.getMessage(), NOT_FOUND.value());
   }

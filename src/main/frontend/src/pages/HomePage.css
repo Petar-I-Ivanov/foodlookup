@@ -1,0 +1,28 @@
+.HomePage-Wrapper {
+  margin: auto;
+  min-width: 60%;
+  min-height: 100%;
+}
+
+.HomePage-Wrapper table tbody tr {
+  cursor: pointer;
+}
+
+.HomePage-Wrapper table tbody tr:hover {
+  background-color: aliceblue;
+}
+
+.HomePage-Wrapper table thead th {
+  font-weight: bold;
+}
+
+.HomePage-Wrapper div:last-child {
+  margin-top: 2rem;
+}
+
+.AddFood-Wrapper {
+  margin: 2rem 0 1rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

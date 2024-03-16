@@ -1,3 +1,5 @@
+CREATE SEQUENCE `hibernate_sequence`;
+
 CREATE TABLE IF NOT EXISTS `food` (
     `food_id` BIGINT PRIMARY KEY,
     `description` VARCHAR(255) UNIQUE,

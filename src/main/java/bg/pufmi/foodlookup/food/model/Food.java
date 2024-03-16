@@ -1,6 +1,5 @@
 package bg.pufmi.foodlookup.food.model;
 
-import static jakarta.persistence.GenerationType.IDENTITY;
 import static lombok.AccessLevel.PRIVATE;
 
 import jakarta.persistence.Column;
@@ -25,7 +24,7 @@ import lombok.experimental.FieldDefaults;
 public class Food {
 
   @Id
-  @GeneratedValue(strategy = IDENTITY)
+  @GeneratedValue
   @Column(name = "food_id")
   Long id;
 

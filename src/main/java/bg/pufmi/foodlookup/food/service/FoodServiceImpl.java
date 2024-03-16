@@ -1,5 +1,7 @@
 package bg.pufmi.foodlookup.food.service;
 
+import static java.text.DecimalFormatSymbols.getInstance;
+import static java.util.Locale.US;
 import static lombok.AccessLevel.PRIVATE;
 
 import bg.pufmi.foodlookup.food.model.Food;
@@ -24,7 +26,7 @@ import org.springframework.stereotype.Service;
 @FieldDefaults(level = PRIVATE, makeFinal = true)
 public class FoodServiceImpl implements FoodService {
 
-  static DecimalFormat DECIMAL_FORMATTER = new DecimalFormat("0.00");
+  static DecimalFormat DECIMAL_FORMATTER = new DecimalFormat("0.00", getInstance(US));
 
   FoodRepository foodRepository;
 

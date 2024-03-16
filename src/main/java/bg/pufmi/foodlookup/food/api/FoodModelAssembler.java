@@ -1,7 +1,6 @@
 package bg.pufmi.foodlookup.food.api;
 
 import static bg.pufmi.foodlookup.utils.PublicIdUtils.encode;
-import static bg.pufmi.foodlookup.utils.SecurityUtils.isAuthenticated;
 import static lombok.AccessLevel.PRIVATE;
 import static org.springframework.hateoas.server.core.DummyInvocationUtils.methodOn;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
@@ -31,19 +30,13 @@ public class FoodModelAssembler extends RepresentationModelAssemblerSupport<Food
         .fat(food.getFat())
         .carbs(food.getCarbs())
         .build()
-        .addIf(
-            isAuthenticated(),
-            () -> linkTo(methodOn(FoodApi.class).update(publicId, null)).withRel("update"))
-        .addIf(
-            isAuthenticated(),
-            () -> linkTo(methodOn(FoodApi.class).delete(publicId)).withRel("delete"));
+        .add(linkTo(methodOn(FoodApi.class).update(publicId, null)).withRel("update"))
+        .add(linkTo(methodOn(FoodApi.class).delete(publicId)).withRel("delete"));
   }
 
   @Override
   public CollectionModel<FoodModel> toCollectionModel(Iterable<? extends Food> entities) {
     return super.toCollectionModel(entities)
-        .addIf(
-            isAuthenticated(),
-            () -> linkTo(methodOn(FoodApi.class).create(null)).withRel("create"));
+        .add(linkTo(methodOn(FoodApi.class).create(null)).withRel("create"));
   }
 }
