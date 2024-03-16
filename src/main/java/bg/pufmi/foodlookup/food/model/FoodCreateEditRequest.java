@@ -25,15 +25,15 @@ public class FoodCreateEditRequest {
   @Size(max = 250, message = "Food description cannot be larger than 250 symbols!")
   String description;
 
-  @DecimalMin(value = "0.01", message = "Food kcal should be more than 0.00!")
+  @DecimalMin(value = "0.00", message = "Food kcal should be more than 0!")
   BigDecimal kcal;
 
-  @DecimalMin(value = "0.01", message = "Food protein should be more than 0.00!")
+  @DecimalMin(value = "0.00", message = "Food protein should be more than 0!")
   BigDecimal protein;
 
-  @DecimalMin(value = "0.01", message = "Food fat should be more than 0.00!")
+  @DecimalMin(value = "0.00", message = "Food fat should be more than 0!")
   BigDecimal fat;
 
-  @DecimalMin(value = "0.01", message = "Food carbs should be more than 0.00!")
+  @DecimalMin(value = "0.00", message = "Food carbs should be more than 0!")
   BigDecimal carbs;
 }

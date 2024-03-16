@@ -1,6 +1,6 @@
 import queryString from "query-string";
-import ApiError from "../models/error/ApiError";
-import ApiException from "../models/error/ApiException";
+import ApiError from "../../models/error/ApiError";
+import ApiException from "../../models/error/ApiException";
 
 const fetchClientInternal = async (url: string, options: RequestInit = {}) => {
   const response = await fetch(url, options);

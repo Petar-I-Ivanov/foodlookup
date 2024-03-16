@@ -8,6 +8,7 @@ import {
   updateFood,
   useFoodsByCriteria,
 } from "../services/apis/foodApi";
+import useMatchMutate from "../services/base-fetch/useMatchMutate";
 import Food from "../models/food/Food";
 import FoodSearchCriteria from "../models/food/FoodSearchCriteria";
 import FoodTable from "../components/FoodTable";
@@ -24,6 +25,8 @@ const HomePage = () => {
   const [modalProps, setModalProps] = useState<
     { food?: Food; show: boolean } | undefined
   >();
+
+  const mutate = useMatchMutate();
 
   return (
     <FormProvider {...methods}>
@@ -58,7 +61,7 @@ const HomePage = () => {
           onClick={(food) => setSelectedFoods((prev) => [food, ...prev])}
           onUpdate={(food) => setModalProps({ food: food, show: true })}
           onDelete={(food) =>
-            deleteFood(food)
+            deleteFood(food, mutate)
               .then(() => toast.success("Successfully deleted food"))
               .catch((e) => {
                 console.log(e);
@@ -72,8 +75,8 @@ const HomePage = () => {
           <FoodCreateEditModal
             onSubmit={(food) =>
               (modalProps.food
-                ? updateFood(modalProps.food, food)
-                : createFood(links.create?.href || "", food)
+                ? updateFood(modalProps.food, food, mutate)
+                : createFood(links.create?.href || "", food, mutate)
               )
                 .then(() =>
                   toast.success(

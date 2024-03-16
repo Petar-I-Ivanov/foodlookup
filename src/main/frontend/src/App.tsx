@@ -2,7 +2,7 @@ import { SWRConfig } from "swr";
 import toast, { ToastBar, Toaster } from "react-hot-toast";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { ReactComponent as FaTimes } from "./assets/fa-times.svg";
-import fetchClient from "./services/fetcher";
+import fetchClient from "./services/base-fetch/fetcher";
 import HomePage from "./pages/HomePage";
 import "./App.css";
 

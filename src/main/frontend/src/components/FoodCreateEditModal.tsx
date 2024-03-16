@@ -27,6 +27,7 @@ const FoodCreateEditModal: React.FC<{
             <Form.Label>Description</Form.Label>
             <Form.Control
               type="text"
+              maxLength={250}
               {...register("description", {
                 required: "This field is required!",
                 maxLength: {
@@ -47,9 +48,10 @@ const FoodCreateEditModal: React.FC<{
             <Form.Control
               type="number"
               step={0.01}
+              min={0}
               {...register("kcal", {
                 min: {
-                  value: 0.01,
+                  value: 0,
                   message: "This field should be more than 0.00!",
                 },
               })}
@@ -67,9 +69,10 @@ const FoodCreateEditModal: React.FC<{
               <Form.Control
                 type="number"
                 step={0.01}
+                min={0}
                 {...register("protein", {
                   min: {
-                    value: 0.01,
+                    value: 0,
                     message: "This field should be more than 0.00!",
                   },
                 })}
@@ -89,9 +92,10 @@ const FoodCreateEditModal: React.FC<{
               <Form.Control
                 type="number"
                 step={0.01}
+                min={0}
                 {...register("fat", {
                   min: {
-                    value: 0.01,
+                    value: 0,
                     message: "This field should be more than 0.00!",
                   },
                 })}
@@ -109,9 +113,10 @@ const FoodCreateEditModal: React.FC<{
               <Form.Control
                 type="number"
                 step={0.01}
+                min={0}
                 {...register("carbs", {
                   min: {
-                    value: 0.01,
+                    value: 0,
                     message: "This field should be more than 0.00!",
                   },
                 })}
