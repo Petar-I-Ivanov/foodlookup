@@ -11,6 +11,7 @@ import { Button, ButtonGroup, Form } from "react-bootstrap";
 import { useFormContext } from "react-hook-form";
 import Food from "../models/food/Food";
 import FoodSearchCriteria from "../models/food/FoodSearchCriteria";
+import Highlighted from "./Highlighted";
 
 const FoodTable: React.FC<{
   foods?: Food[];
@@ -19,7 +20,7 @@ const FoodTable: React.FC<{
   onClick: (food: Food) => void;
   isSelected: boolean;
 }> = ({ foods, onUpdate, onDelete, onClick, isSelected }) => {
-  const { register } = useFormContext<FoodSearchCriteria>();
+  const { watch, register } = useFormContext<FoodSearchCriteria>();
   const hasActions = !!(onUpdate || onDelete);
   return (
     <TableContainer>
@@ -50,7 +51,12 @@ const FoodTable: React.FC<{
         <TableBody>
           {foods?.map((food) => (
             <TableRow onClick={() => onClick(food)}>
-              <TableCell>{food.description}</TableCell>
+              <TableCell>
+                <Highlighted
+                  text={food.description}
+                  highlight={watch("description")}
+                />
+              </TableCell>
               <TableCell>{food?.kcal}</TableCell>
               <TableCell>{food?.protein}</TableCell>
               <TableCell>{food?.fat}</TableCell>
